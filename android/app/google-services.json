@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "705027472023",
+    "project_id": "home-expense-f0e6d",
+    "storage_bucket": "home-expense-f0e6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705027472023:android:6c6e84da2f9ca372ffc7d2",
+        "android_client_info": {
+          "package_name": "com.expense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705027472023-7r0olsg1d48shg7or76ik0pa4ru0lju2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL6aTfsFfFoofI2gbVLAD9KPEzB0CWEeU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705027472023-7r0olsg1d48shg7or76ik0pa4ru0lju2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
