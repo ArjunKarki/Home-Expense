@@ -8,21 +8,24 @@
 
 import React, {useEffect} from 'react';
 import {Provider, useSelector} from 'react-redux';
-import {createStore} from 'redux';
+import {applyMiddleware, createStore} from 'redux';
 import rootReducer from './src/redux/reducers';
 import Navigation from './src/Navigation';
 import {persistReducer, persistStore} from 'redux-persist';
 import AsyncStorage from '@react-native-community/async-storage';
 import {PersistGate} from 'redux-persist/integration/react';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 const App = () => {
   const persistConfig = {
     key: 'root',
     storage: AsyncStorage,
+    blacklist: ['auth'],
   };
 
   const persistedReducer = persistReducer(persistConfig, rootReducer);
-  const store = createStore(persistedReducer);
+  const store = createStore(persistedReducer, applyMiddleware(thunk, logger));
   const persistor = persistStore(store);
 
   return (

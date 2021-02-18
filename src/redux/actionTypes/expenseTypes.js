@@ -1,0 +1,3 @@
+export const ADD_BUDGET = 'ADD_BUDGET';
+export const ADD_BUDGET_SUCCESS = 'ADD_BUDGET_SUCCESS';
+export const ADD_BUDGET_FAILED = 'ADD_BUDGET_FAILED';
