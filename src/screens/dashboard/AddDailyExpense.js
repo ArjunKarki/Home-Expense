@@ -2,27 +2,27 @@ import moment from 'moment';
 import React, {Component} from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
-import {addBudget} from '../../redux/actions/expenseSummaryActions';
-class AddBudget extends Component {
+import {addDailyExpense} from '../../redux/actions/expenseHistoryActions';
+class AddDailyExpense extends Component {
   constructor(props) {
     super(props);
     this.state = {
       amount: '',
-      month: '',
+      description: '',
     };
   }
 
   componentDidMount() {}
 
-  addBudget = () => {
-    let {amount} = this.state;
+  addDailyExpense = () => {
+    let {amount, description} = this.state;
     if (amount) {
-      this.props.addBudget({amount});
+      this.props.addDailyExpense({amount, description});
     }
   };
 
   render() {
-    let {amount, month} = this.state;
+    let {amount, description} = this.state;
     return (
       <View
         style={{
@@ -37,17 +37,15 @@ class AddBudget extends Component {
           style={{borderWidth: 1, height: 45, padding: 5}}
         />
         <TextInput
-          value={month}
-          placeholder="Month"
-          onChangeText={(amount) => this.setState({amount})}
+          value={description}
+          placeholder="Description"
+          onChangeText={(description) => this.setState({description})}
           style={{borderWidth: 1, height: 45, padding: 5, marginTop: 20}}
         />
         <TouchableOpacity
-          onPress={this.addBudget}
+          onPress={this.addDailyExpense}
           style={{marginTop: 10, borderWidth: 1}}>
-          <Text style={{paddingVertical: 10, alignSelf: 'center'}}>
-            Add Budge
-          </Text>
+          <Text style={{paddingVertical: 10, alignSelf: 'center'}}>Add</Text>
         </TouchableOpacity>
       </View>
     );
@@ -58,4 +56,4 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps, {addBudget})(AddBudget);
+export default connect(mapStateToProps, {addDailyExpense})(AddDailyExpense);

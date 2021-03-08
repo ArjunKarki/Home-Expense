@@ -8,7 +8,8 @@ import Dashboard from './screens/dashboard';
 import {useSelector} from 'react-redux';
 import Signup from './screens/auth/Signup';
 import {navigationRef} from './utils/RootNavigation';
-import AddBudget from './screens/dashboard/addBudget';
+import AddBudget from './screens/dashboard/AddBudget';
+import AddDailyExpense from './screens/dashboard/AddDailyExpense';
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const AppStack = () => (
   <Stack.Navigator>
     <Stack.Screen name="dashboard" component={Dashboard} />
     <Stack.Screen name="addBudget" component={AddBudget} />
+    <Stack.Screen name="addDailyExpense" component={AddDailyExpense} />
   </Stack.Navigator>
 );
 
